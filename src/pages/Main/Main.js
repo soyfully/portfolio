@@ -1,10 +1,11 @@
 import React from 'react'
 // import styled from "styled-components";
+import Nav from '../../components/nav'
 
 function Main() {
   return (
     <div>
-      Main
+      <Nav />
     </div>
   )
 }
