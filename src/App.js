@@ -1,15 +1,8 @@
-import styled from "styled-components";
+import React from "react";
+import Router from "./router";
 
 function App() {
-  return (
-    <Wrap>
-      TEST
-    </Wrap>
-  );
+  return <Router />;
 }
-
-const Wrap = styled.div`
-  color: #222;
-`
 
 export default App;
