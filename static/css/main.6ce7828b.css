@@ -1,0 +1,2 @@
+.animate:before{animation:beforeAnimation 1.2s ease-in-out}.animate{animation-delay:.5s;animation-duration:0s;animation-fill-mode:forwards;animation-name:changeColor}@keyframes beforeAnimation{0%{left:0;width:0}40%{width:100%}50%{width:100%}to{right:0;width:0}}@keyframes changeColor{to{color:#222}}
+/*# sourceMappingURL=main.6ce7828b.css.map*/
