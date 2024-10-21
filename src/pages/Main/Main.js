@@ -19,16 +19,18 @@ function Main() {
     <Wrap>
       <Nav/>
 
-      <Info>
+      <TextWrap>
         <Title>Hello, I'm <Highlight className='highLight'>SOI</Highlight>.</Title>
-        <Desc>
-          I'm a <Highlight className='highLight'>frontend</Highlight> <br /> <Highlight className='highLight'>developer</Highlight>.
-          I primarily <br /> work with <Highlight className='highLight'>React</Highlight>, <Highlight className='highLight'>SEO</Highlight>, <br /> and <Highlight className='highLight'>Web Performance</Highlight>.
-        </Desc>
-      </Info>
-      <Footer>
-        © 2024 KIM SOI. All rights reserved.
-      </Footer>
+        <div>
+          <Desc>
+            I'm a <Highlight className='highLight'>frontend</Highlight> <br /> <Highlight className='highLight'>developer</Highlight>.
+            I primarily <br /> work with <Highlight className='highLight'>React</Highlight>, <Highlight className='highLight'>SEO</Highlight>, <br /> and <Highlight className='highLight'>Web Performance</Highlight>.
+          </Desc>
+          <Footer>
+            © 2024 KIM SOI. All rights reserved.
+          </Footer>
+        </div>
+      </TextWrap>
     </Wrap>
   )
 }
@@ -44,15 +46,19 @@ const Wrap = styled.div`
   font-weight: 900;
 `;
 
-const Info = styled.div`
+const TextWrap = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  @media (max-width: ${breakpoints.medium})   {
+  @media (max-width: ${breakpoints.small}) {
     font-size: 1.3rem;
+  }
+
+  @media (min-width: ${breakpoints.small}) {
+    font-size: 2rem;
   }
 
   @media (min-width: ${breakpoints.medium}) {
@@ -88,10 +94,17 @@ const Highlight = styled.span`
     width: 0%;
   }
 
-  @media (max-width: ${breakpoints.medium}) {
+  @media (max-width: ${breakpoints.small}) {
     &::before {
       top: 4px;
       height: 24px;
+    }
+  }
+
+  @media (min-width: ${breakpoints.small}) {
+    &::before {
+      top: 7px;
+      height: 35px;
     }
   }
 
@@ -121,6 +134,26 @@ const Footer = styled.span`
   height: auto;
   font-weight: 200;
   font-size: 1rem;
+
+  @media (max-width: ${breakpoints.small}) {
+    font-size: 0.6rem;
+  }
+
+  @media (min-width: ${breakpoints.small}) {
+    font-size: 0.7rem;
+  }
+
+  @media (min-width: ${breakpoints.medium}) {
+    font-size: 0.8rem;
+  }
+
+  @media (min-width: ${breakpoints.large}) {
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: ${breakpoints.extraLarge}) {
+    font-size: 1rem;
+  }
 `
 
 export default Main
