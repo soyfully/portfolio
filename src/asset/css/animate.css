@@ -1,0 +1,32 @@
+.animate::before {
+    animation: beforeAnimation 1.2s ease-in-out;
+}
+.animate {
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-duration: 0s;
+    animation-name: changeColor;
+}
+
+@keyframes beforeAnimation {
+    0% {
+        width: 0%;
+        left: 0;
+    }
+    40% {
+        width: 100%;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+        right: 0;
+    }
+}
+
+@keyframes changeColor {
+    to {
+      color: #222;
+    }
+}
