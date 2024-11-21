@@ -1,0 +1,70 @@
+
+/* nav hover motion */
+.navHighlight {
+    position: relative;
+    color: rgb(252 218 106);
+}
+
+.navHighlight::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background: #222;
+    width: 0%;
+}
+
+.navAnimate:hover::before {
+    animation: beforeNavAnimation 0.8s ease-in-out;
+}
+
+@media (max-width: 576px) {
+    .navHighlight::before {
+        top: 0px;
+        height: 24px;
+    }
+}
+
+@media (min-width: 576px) {
+    .navHighlight::before {
+        top: 0px;
+        height: 35px;
+    }
+}
+
+@media (min-width: 768px) {
+    .navHighlight::before {
+        top: 0px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navHighlight::before {
+        top: 0px;
+        height: 58px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navHighlight::before {
+        top: 0px;
+        height: 70px;
+    }
+}
+
+@keyframes beforeNavAnimation {
+0% {
+    width: 0%;
+    left: 0;
+}
+40% {
+    width: 100%;
+}
+50% {
+    width: 100%;
+}
+100% {
+    width: 0%;
+    right: 0;
+}
+}

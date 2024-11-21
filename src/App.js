@@ -1,8 +1,13 @@
 import React from "react";
 import Router from "./router";
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
-  return <Router />;
+  return (
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Router />
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App

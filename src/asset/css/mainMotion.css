@@ -1,0 +1,82 @@
+/* main motion */
+.highLight {
+    position: relative;
+    color: rgb(252 218 106);
+}
+
+.highLight::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background: #222;
+    width: 0%;
+}
+
+@media (max-width: 576px) {
+    .highLight::before {
+        top: 4px;
+        height: 24px;
+    }
+}
+
+@media (min-width: 576px) {
+    .highLight::before {
+        top: 7px;
+        height: 35px;
+    }
+}
+
+@media (min-width: 768px) {
+    .highLight::before {
+        top: 10px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    .highLight::before {
+        top: 14px;
+        height: 58px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .highLight::before {
+        top: 19px;
+        height: 70px;
+    }
+}
+
+.animate::before {
+    animation: beforeAnimation 1.2s ease-in-out;
+}
+.animate {
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-duration: 0s;
+    animation-name: changeColor;
+}
+
+@keyframes beforeAnimation {
+    0% {
+        width: 0%;
+        left: 0;
+    }
+    40% {
+        width: 100%;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+        right: 0;
+    }
+}
+
+@keyframes changeColor {
+    to {
+        color: #222;
+    }
+}
+  

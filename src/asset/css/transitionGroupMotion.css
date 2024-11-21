@@ -1,0 +1,36 @@
+/* react-transition-group motion */
+.container {
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    width: 100%;
+    height:100%;
+  }
+.transitions-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+}
+.transitions-wrapper-left,
+.transitions-wrapper-right {
+  overflow: hidden;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+}
+.right-enter {
+  transform: translateX(100%);
+}
+.right-enter-active {
+  z-index: 1;
+  transform: translateX(0%);
+  transition: transform 500ms ease-in-out;
+}
+.right-exit{
+  transform: translateX(0%);
+}
+.transitions-wrapper-left >.right-exit-active,
+.transitions-wrapper-left >.left-exit-active   {
+  transform: translateX(100%);
+  transition: transform 500ms ease-in-out;
+}
