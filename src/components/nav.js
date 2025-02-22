@@ -3,12 +3,20 @@ import { Link } from 'react-router-dom'
 import styled from "styled-components"
 import breakpoints from '../config/breakpoint'
 
-function Nav() {
+const menu = [
+	{'main' :'/'},
+	{'about' : '/about'},
+	{'works' : '/works'},
+	// {'study' : '/study'}
+]
+
+function Nav({currentMenu}) {
 	const [isOpen, setIsOpen] = useState(false);
 	const toggleMenu = () => {
-		setIsOpen(!isOpen);
+		setIsOpen(!isOpen)
 	};
-	const menu = ['MAIN', 'ABOUT', 'WORKS', 'STUDY']
+
+	const filteredMenu = menu.filter(item => !Object.keys(item).includes(currentMenu))
 
 	return (
 		<>
@@ -20,12 +28,15 @@ function Nav() {
 
 			<Wrap className={!isOpen? ``: `open`}>
 				<LinkWrap>
-					{menu.map((element, index) => (
-						<Link key={index} to={`/${element.toLowerCase().replace(/\s+/g, '-')}`} className='navAnimate navHighlight'>
-							{element}
-							<span>0{index + 1}</span>
-						</Link>
-					))}
+					{filteredMenu.map((item, index) => {
+						const [name, path] = Object.entries(item)[0]
+						return (
+							<Link key={index} to={path} className='navAnimate navHighlight'>
+								{name.toUpperCase()}
+								<span>0{index + 1}</span>
+							</Link>
+						)
+					})}
 				</LinkWrap>
 				<Footer>
 					<ul>

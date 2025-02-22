@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Nav from "../../components/nav"
 import breakpoints from '../../config/breakpoint'
 
-function main() {
+function Main() {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	useEffect(() => {
 		const highLights = document.querySelectorAll('.highLight');
@@ -17,20 +17,20 @@ function main() {
 
 	return (
 		<Wrap>
-			<Nav/>
+			<Nav currentMenu={'main'}/>
 
-			<TextWrap>
-				<Title>Hello, I'm <Highlight className='highLight'>SOI</Highlight>.</Title>
+			<div className='mainWrap'>
+				<span className='pageTitle'>Hello, I'm <em className='highLight'>SOI</em>.</span>
 				<div>
-					<Desc>
-						I'm a <Highlight className='highLight'>frontend</Highlight> <br /> <Highlight className='highLight'>developer</Highlight>.
-						I primarily <br /> work with <Highlight className='highLight'>React</Highlight>, <Highlight className='highLight'>SEO</Highlight>, <br /> and <Highlight className='highLight'>Web Performance</Highlight>.
-					</Desc>
-					<Footer>
-						© 2024 KIM SOI. All rights reserved.
-					</Footer>
+					<span className='desc'>
+						I'm a <em className='highLight'>frontend</em> <br /> <em className='highLight'>developer</em>.
+						I primarily <br /> work with <em className='highLight'>React</em>, <em className='highLight'>SEO</em>, <br /> and <em className='highLight'>Web Performance</em>.
+					</span>
+					<span className='footer'>
+						© 2025 KIM SOI. All rights reserved.
+					</span>
 				</div>
-			</TextWrap>
+			</div>
 		</Wrap>
 	)
 }
@@ -44,73 +44,73 @@ const Wrap = styled.div`
 	letter-spacing: -1px;
 	line-height: 1.1;
 	font-weight: 900;
-`;
 
-const TextWrap = styled.div`
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-
-	@media (max-width: ${breakpoints.small}) {
-		font-size: 1.3rem;
+	em {
+		font-style: normal;
 	}
 
-	@media (min-width: ${breakpoints.small}) {
-		font-size: 2rem;
-	}
+	.mainWrap {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 
-	@media (min-width: ${breakpoints.medium}) {
-		font-size: 2.5rem;
-	}
+		@media (max-width: ${breakpoints.small}) {
+			font-size: 1.3rem;
+		}
 
-	@media (min-width: ${breakpoints.large}) {
-		font-size: 3.5rem;
-	}
+		@media (min-width: ${breakpoints.small}) {
+			font-size: 2rem;
+		}
 
-	@media (min-width: ${breakpoints.extraLarge}) {
-		font-size: 4.5rem;
-	}
-`;
+		@media (min-width: ${breakpoints.medium}) {
+			font-size: 2.5rem;
+		}
 
-const Title = styled.span`
-  	display: block;	
-`;
+		@media (min-width: ${breakpoints.large}) {
+			font-size: 3.5rem;
+		}
 
-const Desc = styled.span`
-  	display: block;
-`;
+		@media (min-width: ${breakpoints.extraLarge}) {
+			font-size: 4.5rem;
+		}
+		
+		.pageTitle {
+			display: block;	
+		}
 
-const Highlight = styled.span`
+		.desc {
+			display: block;
+		}
+		
+		.footer {
+			display: block;
+			height: auto;
+			font-weight: 200;
+			font-size: 1rem;
 
-`;
+			@media (max-width: ${breakpoints.small}) {
+				font-size: 0.6rem;
+			}
 
-const Footer = styled.span`
-	display: block;
-	height: auto;
-	font-weight: 200;
-	font-size: 1rem;
+			@media (min-width: ${breakpoints.small}) {
+				font-size: 0.7rem;
+			}
 
-	@media (max-width: ${breakpoints.small}) {
-		font-size: 0.6rem;
-	}
+			@media (min-width: ${breakpoints.medium}) {
+				font-size: 0.8rem;
+			}
 
-	@media (min-width: ${breakpoints.small}) {
-		font-size: 0.7rem;
-	}
+			@media (min-width: ${breakpoints.large}) {
+				font-size: 0.9rem;
+			}
 
-	@media (min-width: ${breakpoints.medium}) {
-		font-size: 0.8rem;
-	}
-
-	@media (min-width: ${breakpoints.large}) {
-		font-size: 0.9rem;
-	}
-
-	@media (min-width: ${breakpoints.extraLarge}) {
-		font-size: 1rem;
+			@media (min-width: ${breakpoints.extraLarge}) {
+				font-size: 1rem;
+			}
+		}
 	}
 `
 
-export default main
+export default Main
