@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 
-function about() {
+function About() {
   return (
     <Wrap className='container'>
       About
@@ -13,4 +13,4 @@ const Wrap = styled.div`
 	background: #ccbeff;
 `;
 
-export default about
+export default About

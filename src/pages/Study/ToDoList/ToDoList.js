@@ -1,7 +1,7 @@
 import React from 'react'
 // import styled from "styled-components";
 
-function toDoList() {
+function ToDoList() {
   return (
     <div>
       toDoList
@@ -9,4 +9,4 @@ function toDoList() {
   )
 }
 
-export default toDoList
+export default ToDoList

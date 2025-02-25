@@ -1,7 +1,7 @@
 import React from 'react'
 // import styled from "styled-components";
 
-function netflix() {
+function Netflix() {
   return (
     <div>
       netflix
@@ -9,5 +9,5 @@ function netflix() {
   )
 }
 
-export default netflix
+export default Netflix
 

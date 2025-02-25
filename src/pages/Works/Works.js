@@ -1,16 +1,44 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from "styled-components"
 import Nav from "../../components/nav"
 import breakpoints from '../../config/breakpoint'
 
 const worksLists = [
-	{'작업한 것 이름 및 어쩌구 ,,' : ['React', 'style-components', 'Git']},
-	{'어쩌구 저쩌궁 ... 강동은 바보' : ['React', 'style-components', 'Git', 'adsfadsfasdf', 'asdfasdfasdfa','React', 'style-components', 'Git', 'adsfadsfasdf', 'asdfasdfasdfa']},
-	{'힝구 힝구 하기 시러용용ㅇ옹' : ['React', 'style-components', 'Git', 'adsfadsfasdf', 'asdfasdfasdfa']},
-	{'스크롤 해서 아래쪽으로 쮺뀨ㅉㅠㅉ' : ['React', 'style-components', 'Git', 'adsfadsfasdf', 'asdfasdfasdfa']}
+	{
+		name : '네이트 썰 커뮤니티 운영',
+		url : 'https://m.ssul.nate.com/',
+		stacks : ['React', 'Typescript','ESLint', 'Prettier', 'style-components', 'Git', 'Figma'],
+		detailId : 'work_1' ,
+	},
+	{
+		name : '네이트 PC 뉴스 운영',
+		url : 'https://news.nate.com/', 
+		stacks : ['SEO', 'A11Y', 'Web performance', 'Pug', 'SCSS', 'Svn', 'Figma'],
+		detailId : 'work_2'
+	},
+	{
+		name : 'SKT NUGU 스마트홈 서비스 개발',
+		stacks : ['webview', 'Vue.js', 'Vuex','ESLint', 'Git', 'Prettier', 'Git', 'Figma'],
+		detailId : 'work_3'
+	},
+	{
+		name : 'e편한세상 웹사이트 구축',
+		url : 'https://www.elife.co.kr/Mnmn_main.action',
+		stacks : ['Pug', 'Scss', 'lottie', 'GSAP', 'Git',' A11Y', 'Web performance'],
+		detailId : 'work_4'
+	},
+	{
+		name : '동아제약 OTC 웹사이트 구축',
+		url : 'https://dpharm.co.kr/',
+		stacks : ['Pug', 'Scss', 'lottie', 'GSAP', 'Git', 'A11Y', 'Web performance'],
+		detailId : 'work_5'
+	}
 ]
 
-function works() {
+function Works() {
+	const navigate = useNavigate()
+
 	return (
 		<Wrap className='container'>
 			<Nav currentMenu={'works'}/>
@@ -23,12 +51,11 @@ function works() {
 				</div>
 				<ul className='lists'>
 					<div>
-						{worksLists.map((item, index) => {
-							const [title, stacks] = Object.entries(item)[0]
+						{worksLists.map(({name, stacks, detailId}, index) => {
 							return (
-								<li key={index} className='list'>
+								<li key={index} className='list' onClick={()=> {navigate(`/detail/${detailId}`)}}>
 									<span className='index'>0{index + 1}</span>
-									<span className='title'>{title}</span>
+									<span className='title'>{name}</span>
 									<span className='stacks'>
 										{stacks.map((stack, stackIndex) => (
 											<span key={stackIndex} className='stack'> {stack} </span>
@@ -48,9 +75,9 @@ function works() {
 
 const Wrap = styled.div`
 	background: #9bcffe;
-	padding: 50px 140px 50px 50px;
+	padding: 0px 140px 0px 50px;
 	width: calc(100% - 190px);
-	height: calc(100vh - 100px);
+	height: 100vh;
 	color: #222;
 	letter-spacing: -1px;
 	line-height: 1.1;
@@ -61,6 +88,7 @@ const Wrap = styled.div`
 		height: 100%;
 
 		.pageTitle {
+			padding: 50px 0 0 0;
 			flex: 1;
 			@media (max-width: ${breakpoints.small}) {
 				font-size: 1;
@@ -87,7 +115,7 @@ const Wrap = styled.div`
 			flex: 1;
 			list-style: none;
 			margin: 0;
-			padding: 0;
+			padding: 50px 0 50px 0;
 			overflow-y: scroll;
 			&::-webkit-scrollbar {
 				display: none;
@@ -98,6 +126,8 @@ const Wrap = styled.div`
 				border-top: 3px solid #222;
 				padding: 20px 0 0 80px;
 				margin: 80px 0 0 0;
+				cursor: pointer;
+
 				&:first-child {
 					margin: 0;
 				}
@@ -133,4 +163,4 @@ const Wrap = styled.div`
 		}
 	}
 `
-export default works
+export default Works

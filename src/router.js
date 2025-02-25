@@ -1,12 +1,13 @@
 import React from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import Main from "./pages/main/main"
-import About from "./pages/about/about"
-import Works from "./pages/works/works"
-import Study from "./pages/study/study"
-import ToDoList from "./pages/study/toDoList/toDoList"
-import Netflix from "./pages/study/netflix/netflix"
+import Main from "./pages/main/Main"
+import About from "./pages/about/About"
+import Works from "./pages/works/Works"
+import Detail from "./pages/works/Detail"
+import Study from "./pages/study/Study"
+import ToDoList from "./pages/study/toDoList/ToDoList"
+import Netflix from "./pages/study/netflix/Netflix"
 
 function Router() {
 	let isBack;
@@ -32,6 +33,7 @@ function Router() {
 					<Route path="/" element={<Main />} />
 					<Route path="/about" element={<About />} />
 					<Route path="/works" element={<Works/>} />
+						<Route path="/detail/:detailId" element={<Detail/>} />
 					<Route path="/study" element={<Study/>}>
 						<Route path="toDoList" element={<ToDoList/>} />
 						<Route path="netflix" element={<Netflix/>} />
