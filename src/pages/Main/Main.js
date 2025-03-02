@@ -92,19 +92,19 @@ const Wrap = styled.div`
 
 	@media ((min-width: ${breakpoints.tablet}) and (max-width: ${breakpoints.labtop})) {
 		.mainWrap {
-			font-size: 2.5rem;
+			font-size: 2.7rem;
 		}
 	}
 
 	@media ((min-width: ${breakpoints.labtop}) and (max-width: ${breakpoints.desktop})) {
 		.mainWrap {
-			font-size: 3rem;
+			font-size: 3.7rem;
 		}
 	}
 
 	@media (min-width: ${breakpoints.desktop}) {
 		.mainWrap {
-			font-size: 4rem;
+			font-size: 4.5rem;
 		}
 	}
 `
