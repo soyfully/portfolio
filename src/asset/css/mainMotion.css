@@ -12,37 +12,44 @@
     width: 0%;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 425px) {
     .highLight::before {
-        top: 4px;
-        height: 24px;
+        top: 3px;
+        height: 22px;
     }
 }
 
-@media (min-width: 576px) {
+@media ((min-width: 425px) and (max-width: 550px)) {
+    .highLight::before {
+        top: 5px;
+        height: 27px;
+    }
+}
+
+@media ((min-width: 550px) and (max-width: 768px)) {
     .highLight::before {
         top: 7px;
-        height: 35px;
+        height: 33px;
     }
 }
 
-@media (min-width: 768px) {
+@media ((min-width: 768px) and (max-width: 1024px)) {
     .highLight::before {
-        top: 10px;
-        height: 40px;
+        top: 9px;
+        height: 42px;
     }
 }
 
-@media (min-width: 992px) {
+@media ((min-width: 1024px) and (max-width: 1440px)) {
     .highLight::before {
-        top: 14px;
-        height: 58px;
+        top: 13px;
+        height: 48px;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
     .highLight::before {
-        top: 19px;
+        top: 15px;
         height: 70px;
     }
 }

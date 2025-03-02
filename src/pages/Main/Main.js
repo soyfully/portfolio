@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from "styled-components"
 import Nav from "../../components/nav"
+import Footer from "../../components/Footer"
 import breakpoints from '../../config/breakpoint'
 
 function Main() {
@@ -17,7 +18,7 @@ function Main() {
 
 	return (
 		<Wrap>
-			<Nav currentMenu={'main'}/>
+			<Nav currentMenu={'home'}/>
 
 			<div className='mainWrap'>
 				<span className='pageTitle'>Hello, I'm <em className='highLight'>SOI</em>.</span>
@@ -26,9 +27,7 @@ function Main() {
 						I'm a <em className='highLight'>frontend</em> <br /> <em className='highLight'>developer</em>.
 						I primarily <br /> work with <em className='highLight'>React</em>, <em className='highLight'>SEO</em>, <br /> and <em className='highLight'>Web Performance</em>.
 					</span>
-					<span className='footer'>
-						© 2025 KIM SOI. All rights reserved.
-					</span>
+					<Footer />
 				</div>
 			</div>
 		</Wrap>
@@ -55,27 +54,6 @@ const Wrap = styled.div`
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-
-		@media (max-width: ${breakpoints.small}) {
-			font-size: 1.3rem;
-		}
-
-		@media (min-width: ${breakpoints.small}) {
-			font-size: 2rem;
-		}
-
-		@media (min-width: ${breakpoints.medium}) {
-			font-size: 2.5rem;
-		}
-
-		@media (min-width: ${breakpoints.large}) {
-			font-size: 3.5rem;
-		}
-
-		@media (min-width: ${breakpoints.extraLarge}) {
-			font-size: 4.5rem;
-		}
-		
 		.pageTitle {
 			display: block;	
 		}
@@ -83,32 +61,50 @@ const Wrap = styled.div`
 		.desc {
 			display: block;
 		}
-		
-		.footer {
-			display: block;
-			height: auto;
-			font-weight: 200;
-			font-size: 1rem;
+	}
 
-			@media (max-width: ${breakpoints.small}) {
-				font-size: 0.6rem;
-			}
+	@media (max-width: ${breakpoints.mobile_L}) {
+		padding: 30px;
+		height: calc(100vh - 60px);
 
-			@media (min-width: ${breakpoints.small}) {
-				font-size: 0.7rem;
-			}
+		.mainWrap {
+			font-size: 1.2rem;
+		}
+	}
 
-			@media (min-width: ${breakpoints.medium}) {
-				font-size: 0.8rem;
-			}
+	@media ((min-width: ${breakpoints.mobile_L}) and (max-width: ${breakpoints.mobile_XL})) {
+		padding: 30px;
+		height: calc(100vh - 60px);
 
-			@media (min-width: ${breakpoints.large}) {
-				font-size: 0.9rem;
-			}
+		.mainWrap {
+			font-size: 1.5rem;
+		}
+	}
 
-			@media (min-width: ${breakpoints.extraLarge}) {
-				font-size: 1rem;
-			}
+	@media ((min-width: ${breakpoints.mobile_XL}) and (max-width: ${breakpoints.tablet})) {
+		padding: 30px;
+		height: calc(100vh - 60px);
+
+		.mainWrap {
+			font-size: 2rem;
+		}
+	}
+
+	@media ((min-width: ${breakpoints.tablet}) and (max-width: ${breakpoints.labtop})) {
+		.mainWrap {
+			font-size: 2.5rem;
+		}
+	}
+
+	@media ((min-width: ${breakpoints.labtop}) and (max-width: ${breakpoints.desktop})) {
+		.mainWrap {
+			font-size: 3rem;
+		}
+	}
+
+	@media (min-width: ${breakpoints.desktop}) {
+		.mainWrap {
+			font-size: 4rem;
 		}
 	}
 `
