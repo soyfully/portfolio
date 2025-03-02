@@ -106,9 +106,9 @@ const Wrap = styled.div`
 		padding: 50px;
 		width: calc(100% - 100px);
 		height: calc(100vh - 100px);
-		top: 0;
+		bottom: 0;
 		left: 0;
-		transform: translateX(100%);
+		transform: translateY(100%);
 		transition: transform 500ms ease-in-out;
 
 		&.open {
