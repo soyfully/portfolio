@@ -1,43 +1,25 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+// import useSWR from 'swr'
 import styled from "styled-components"
 import Nav from "../../components/nav"
 import breakpoints from '../../config/breakpoint'
+import Footer from "../../components/Footer"
+import worksLists from "../../asset/json/worksLists"
 
-const worksLists = [
-	{
-		name : '네이트 썰 커뮤니티 운영',
-		url : 'https://m.ssul.nate.com/',
-		stacks : ['React', 'Typescript','ESLint', 'Prettier', 'style-components', 'SEO', 'A11Y', 'Web performance', 'Git', 'Figma', 'JIRA'],
-		detailId : 'work_1' ,
-	},
-	{
-		name : '네이트 PC 뉴스 운영',
-		url : 'https://news.nate.com/', 
-		stacks : ['SEO', 'A11Y', 'Web performance', 'Pug', 'SCSS', 'JavaScript', 'Cross Browsing','Svn', 'Figma', 'JIRA'],
-		detailId : 'work_2'
-	},
-	{
-		name : 'SKT NUGU 스마트홈 서비스 개발',
-		stacks : ['WebView', 'Vue.js', 'Vuex','ESLint', 'Git', 'Prettier', 'Git', 'Figma', 'JIRA'],
-		detailId : 'work_3'
-	},
-	{
-		name : 'e편한세상 웹사이트 구축',
-		url : 'https://www.elife.co.kr/Mnmn_main.action',
-		stacks : ['Pug', 'Scss', 'JavaScript', 'es6','lottie', 'GSAP', 'Git',' A11Y', 'Web performance'],
-		detailId : 'work_4'
-	},
-	{
-		name : '동아제약 OTC 웹사이트 구축',
-		url : 'https://dpharm.co.kr/',
-		stacks : ['Pug', 'Scss', 'JavaScript', 'es6', 'lottie', 'GSAP', 'Git', 'A11Y', 'Web performance'],
-		detailId : 'work_5'
-	}
-]
+// const fetcher = (url) => {
+// 	return fetch(url, {
+// 		method: 'GET',
+// 		headers: {
+// 			'Content-Type': 'application/json',
+// 			'Accept': 'application/json',
+// 		},
+// 	}).then((res) => res.json());
+// };
 
 function Works() {
 	const navigate = useNavigate()
+	// const { data, error } = useSWR('/worksLists.json', fetcher)
 
 	return (
 		<Wrap className='container'>
@@ -45,17 +27,18 @@ function Works() {
 
 			<div className='worksWrap'>
 				<div className='pageTitle'>
-					<span>
+					<h1 className='title'>
 						What I <br /> worked on
-					</span>
+					</h1>
+					<Footer />
 				</div>
 				<ul className='lists'>
 					<div>
-						{worksLists.map(({name, stacks, detailId}, index) => {
+						{worksLists.data.map(({name, stacks, detailId}, index) => {
 							return (
 								<li key={index} className='list' onClick={()=> {navigate(`/detail/${detailId}`)}}>
 									<span className='index'>0{index + 1}</span>
-									<span className='title'>{name}</span>
+									<h2 className='title'>{name}</h2>
 									<span className='stacks'>
 										{stacks.map((stack, stackIndex) => (
 											<span key={stackIndex} className='stack'> {stack} </span>
@@ -92,8 +75,15 @@ const Wrap = styled.div`
 		height: 100%;
 
 		.pageTitle {
-			padding: 50px 0 0 0;
+			padding: 50px 0 50px 0;
 			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			.title {
+				font-weight: 900;
+				margin: 0;
+			}
 		}
 
 		.lists {
@@ -132,6 +122,8 @@ const Wrap = styled.div`
 				}
 
 				.title {
+					margin: 0;
+					font-weight: 900;
 					display: block;
 					word-break: keep-all;
 					font-family: "Noto Sans", sans-serif; 
@@ -188,9 +180,17 @@ const Wrap = styled.div`
 		.worksWrap {
 			flex-direction: column;
 			.pageTitle {
-				padding: 20px 0 0 0;
+				padding: 20px 0 20px 0;
 				flex: 0;
-				font-size: 2rem;
+				display: block;
+
+				.title {
+					font-size: 2.5rem;
+				}
+				
+				.footer {
+					display: none;
+				}
 			}
 			.lists {
 				flex: 1;
@@ -211,7 +211,9 @@ const Wrap = styled.div`
 	@media ((min-width: ${breakpoints.tablet}) and (max-width: ${breakpoints.labtop})) {
 		.worksWrap {
 			.pageTitle {
-				font-size: 2.5rem;
+				.title {
+					font-size: 2.8rem;
+				}
 			}
 			.lists {
 				.list { 
@@ -231,7 +233,9 @@ const Wrap = styled.div`
 	@media ((min-width: ${breakpoints.labtop}) and (max-width: ${breakpoints.desktop})) {
 		.worksWrap {
 			.pageTitle {
-				font-size: 3rem;
+				.title {
+					font-size: 3.5rem;
+				}
 			}
 			.lists {
 				.list { 
@@ -251,7 +255,9 @@ const Wrap = styled.div`
 	@media (min-width: ${breakpoints.desktop}) {
 		.worksWrap {
 			.pageTitle {
-				font-size: 4rem;
+				.title {
+					font-size: 4rem;
+				}
 			}
 			.lists {
 				.list { 

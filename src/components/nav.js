@@ -40,7 +40,7 @@ function Nav({currentMenu}) {
 					})}
 				</div>
 				<div>
-					<div className='footer'>
+					<div className='info'>
 						<ul>
 							<li>KIM SOI</li>
 							<li>Frontend Developer</li>
@@ -101,12 +101,12 @@ const Wrap = styled.div`
 		flex-direction: column;
 		justify-content: space-between;
 		position: absolute;
-		background: #e9e8e5;
+		background: #c0d57e;
 		z-index: 1;
 		padding: 50px;
 		width: calc(100% - 100px);
 		height: calc(100vh - 100px);
-		bottom: 0;
+		top: 0;
 		left: 0;
 		transform: translateY(100%);
 		transition: transform 500ms ease-in-out;
@@ -140,7 +140,7 @@ const Wrap = styled.div`
 				}
 			}
 		}
-		.footer {
+		.info {
 			font-size: 1rem;
 			font-weight: 400;
 			display: flex;
@@ -178,7 +178,7 @@ const Wrap = styled.div`
 					}
 				}
 			}
-			.footer {
+			.info {
 				align-items: flex-start;
 				flex-direction: column;
 				gap: 20px 0px;

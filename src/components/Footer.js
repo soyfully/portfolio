@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 export default function Footer() {
     return (
-        <Wrap>
+        <Wrap className='footer'>
             © 2025 KIM SOI. All rights reserved.
         </Wrap>
     )

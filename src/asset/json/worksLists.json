@@ -1,0 +1,46 @@
+{
+    "name": "works lists",
+    "data" : [
+        {
+            "name" : "네이트 썰 커뮤니티 운영",
+            "url" : "https://m.ssul.nate.com/",
+            "stacks" : ["React", "Typescript","ESLint", "Prettier", "style-components", "SEO", "A11Y", "Web performance", "Git", "Figma", "JIRA"],
+            "desc" : "어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라",
+            "year" : "2023 ~",
+            "detailId" : "1"
+        },
+        {
+            "name" : "네이트 PC 뉴스 운영",
+            "url" : "https://news.nate.com/", 
+            "stacks" : ["SEO", "A11Y", "Web performance", "Pug", "SCSS", "JavaScript", "Cross Browsing", "Svn", "Figma", "JIRA"],
+            "desc" : "어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라",
+            "year" : "2021 ~",
+            "detailId" : "2"
+        },
+        {
+            "name" : "SKT NUGU 스마트홈 서비스 개발",
+            "stacks" : ["WebView", "Vue.js", "Vuex", "ESLint", "Git", "Prettier", "Git", "Figma", "JIRA"],
+            "desc" : "어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라",
+            "year" : "2021 ~",
+            "detailId" : "3"
+        },
+        {
+            "name" : "e편한세상 웹사이트 구축",
+            "url" : "https://www.elife.co.kr/Mnmn_main.action",
+            "stacks" : ["Pug", "Scss", "JavaScript", "es6", "lottie", "GSAP", "Git", "A11Y", "Web performance"],
+            "desc" : "어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라",
+            "year" : "2020",
+            "contribution" : "100%",
+            "detailId" : "4"
+        },
+        {
+            "name" : "동아제약 OTC 웹사이트 구축",
+            "url" : "https://dpharm.co.kr/",
+            "stacks" : ["Pug", "Scss", "JavaScript", "es6", "lottie", "GSAP", "Git", "A11Y", "Web performance"],
+            "desc" : "어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라",
+            "year" : "2020",
+            "contribution" : "100%",
+            "detailId" : "5"
+        }
+    ]
+}
