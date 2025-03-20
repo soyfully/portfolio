@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
-import Nav from "../../components/nav"
+// import Nav from "../../components/nav"
 import styled from 'styled-components'
 import breakpoints from '../../config/breakpoint'
 import worksLists from "../../asset/json/worksLists"
@@ -18,7 +18,7 @@ function Detail() {
 			<span className='arrowArea' onClick={()=> {navigate(-1)}}>
 				<span className='arrow'></span>
 			</span>
-            <Nav currentMenu={'works'}/>
+            {/* <Nav currentMenu={'works'}/> */}
 
 			<div className='detailWrap'>
 				<div className='detail'>
@@ -41,9 +41,12 @@ function Detail() {
 							</li>
 						</ul>
 					</div>
-					<a href={url} target="_blank" rel="noopener noreferrer" className='view'>
-						view
-					</a>
+					{url && 
+						<a href={url} target="_blank" rel="noopener noreferrer" className='view'>
+							view
+						</a>
+					}
+					
 				</div>
 				<div className='imgWrap'>
 					<img src='https://placehold.co/1920x1080' className='img' />
@@ -75,9 +78,9 @@ const Wrap = styled.div`
 			left: 0;
 			bottom: 7px;
 			display: inline-block;
-			width: 50px;
+			width: 80px;
 			height: 2px;
-			background-color: black;
+			background: #222;
 
 			&::after {
 				content: "";
@@ -86,7 +89,7 @@ const Wrap = styled.div`
 				transform: translate(-30%, -113%) rotate(-300deg);
 				width: 15px;
 				height: 15px;
-				border-right: 2px solid black;
+				border-right: 2px solid #222;
 			}
 		}
 	}

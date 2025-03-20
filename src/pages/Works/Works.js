@@ -33,24 +33,22 @@ function Works() {
 					<Footer />
 				</div>
 				<ul className='lists'>
-					<div>
-						{worksLists.data.map(({name, stacks, detailId}, index) => {
-							return (
-								<li key={index} className='list' onClick={()=> {navigate(`/detail/${detailId}`)}}>
-									<span className='index'>0{index + 1}</span>
-									<h2 className='title'>{name}</h2>
-									<span className='stacks'>
-										{stacks.map((stack, stackIndex) => (
-											<span key={stackIndex} className='stack'> {stack} </span>
-										))}
-									</span>
-									<span className='arrowArea'>
-										<span className='arrow'></span>
-									</span>
-								</li>
-							)
-						})}
-					</div>
+					{worksLists.data.map(({name, stacks, detailId}, index) => {
+						return (
+							<li key={index} className='list' onClick={()=> {navigate(`/detail/${detailId}`)}}>
+								<span className='index'>0{index + 1}</span>
+								<h2 className='title'>{name}</h2>
+								<span className='stacks'>
+									{stacks.map((stack, stackIndex) => (
+										<span key={stackIndex} className='stack'> {stack} </span>
+									))}
+								</span>
+								<span className='arrowArea'>
+									<span className='arrow'></span>
+								</span>
+							</li>
+						)
+					})}
 				</ul>
 			</div>
 		
@@ -118,7 +116,7 @@ const Wrap = styled.div`
 					left: 0;
 					top: 42px;
 					font-weight: 200;
-					font-size: 0.7rem;
+					font-size: 0.8rem;
 				}
 
 				.title {
@@ -154,9 +152,9 @@ const Wrap = styled.div`
 						right: 0;
 						bottom: 0;
 						display: inline-block;
-						width: 100px;
-						height: 1px;
-						background-color: black;
+						width: 80px;
+						height: 2px;
+						background: #222;
 						&::after {
 							content: "";
 							position: absolute;
@@ -164,7 +162,7 @@ const Wrap = styled.div`
 							transform: translate(-13%, -27%) rotate(300deg);
 							width: 15px;
 							height: 15px;
-							border-right: 1px solid black;
+							border-right: 2px solid #222;
 						}
 					}
 				}
