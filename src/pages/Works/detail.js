@@ -11,7 +11,7 @@ function Detail() {
     const { detailId } = useParams() 
 
 	const numDetailId = Number(detailId) || 0
-	const {name, url, desc, year, contribution} = worksLists.data[numDetailId - 1] ?? {}
+	const {name, url, descs, year, contribution} = worksLists.data[numDetailId - 1] ?? {}
 
     return (
         <Wrap className='container'>
@@ -26,9 +26,13 @@ function Detail() {
 						<h1 className='title'>
 							{ name }
 						</h1>
-						<p className='desc'>
-							{ desc }
-						</p>
+						<ul className='desc'>
+							{ descs.map((desc, index) => {
+								return (
+									<li key={ index }>{ desc }</li>
+								)
+							})}
+						</ul>
 						<ul className='info'>
 							<li>
 								Year : { year }
@@ -121,6 +125,25 @@ const Wrap = styled.div`
 					margin: 40px 0 0 0;
 					line-height: 1.5;
 					font-weight: 500;
+					padding: 0;
+					list-style: none;
+					
+					li {
+						position: relative;
+						padding: 0 0 0 20px;
+
+						&:before {
+							content: '';
+							position: absolute;
+							left: 6px;
+							top: 13px;
+							display: block;
+							width: 3px;
+							height: 3px;
+							background: #222;
+							border-radius: 100%;
+						}
+					}
 				}
 
 				.info {
@@ -192,6 +215,12 @@ const Wrap = styled.div`
 						font-size: 0.8rem;
 					}
 				}
+
+				.view {
+					position: absolute;
+					right: 30px;
+					bottom: 30px;
+				}
 			}
 
 			.imgWrap {
@@ -217,6 +246,11 @@ const Wrap = styled.div`
 					.desc {
 						font-size: 0.9rem;
 					}
+				}
+				.view {
+					position: absolute;
+					right: 30px;
+					bottom: 30px;
 				}
 			}
 			.imgWrap {

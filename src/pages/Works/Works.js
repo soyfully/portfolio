@@ -207,13 +207,28 @@ const Wrap = styled.div`
 		}
 	}
 	@media ((min-width: ${breakpoints.tablet}) and (max-width: ${breakpoints.labtop})) {
+		padding: 30px 30px 0 30px;
+		width: calc(100% - 60px);
+
 		.worksWrap {
+			flex-direction: column;
 			.pageTitle {
+				padding: 20px 0 20px 0;
+				flex: 0;
+				display: block;
+
 				.title {
-					font-size: 2.8rem;
+					font-size: 3.5rem;
+				}
+
+				.footer {
+					display: none;
 				}
 			}
 			.lists {
+				flex: 1;
+				padding: 100px 0 100px 0;
+
 				.list { 
 					.title {
 						font-size: 1.5rem;

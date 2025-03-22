@@ -5,7 +5,13 @@
             "name" : "네이트 썰 커뮤니티 운영",
             "url" : "https://m.ssul.nate.com/",
             "stacks" : ["React", "Typescript","ESLint", "Prettier", "style-components", "SEO", "A11Y", "Web performance", "Git", "Figma", "JIRA"],
-            "desc" : "어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라",
+            "descs" : [
+                "React와 Typescript를 사용해 각종 컴포넌트 개발",
+                "React hook을 활용한 상태 관리",
+                "ESLint, Prettier 사용하여 코드 퀄리티 및 일관성 있는 코드 작성",
+                "UI/UX 개선 및 운영 (SEO, 접근성 등)",
+                "Git을 이용한 코드 형상 관리"
+            ],
             "year" : "2023 ~",
             "detailId" : "1"
         },
@@ -13,14 +19,28 @@
             "name" : "네이트 PC 뉴스 운영",
             "url" : "https://news.nate.com/", 
             "stacks" : ["SEO", "A11Y", "Web performance", "Pug", "SCSS", "JavaScript", "Cross Browsing", "Svn", "Figma", "JIRA"],
-            "desc" : "어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라",
+            "descs" : [
+                "UI/UX 개선 및 운영 (SEO, 접근성, 성능 최적화 등)",
+                "pug, scss 와 같은 전처리기를 이용해 모듈화 하여 재사용성 높힘",
+                "레거시 소스 리팩토링 및 공통화",
+                "크롬 버전 업데이트 대응",
+                "소나 큐브를 활용한 코드 품질 관리 개선",
+                "웹 접근성 준수 및 마크 획득",
+                "크로스 브라우징 대응"
+            ],
             "year" : "2021 ~",
             "detailId" : "2"
         },
         {
             "name" : "SKT NUGU 스마트홈 서비스 개발",
             "stacks" : ["WebView", "Vue.js", "Vuex", "ESLint", "Git", "Prettier", "Git", "Figma", "JIRA"],
-            "desc" : "어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라",
+            "descs" : [
+                "webview 환경 개발 경험",
+                "Vue.js와 Vue Router를 사용하여 사용성과 유지보수 고려해 컴포넌트 개발",
+                "Vuex를 활용한 상태 관리",
+                "ESLint, Prettier 사용하여 코드 퀄리티 및 일관성 있는 코드 작성",
+                "Git을 이용한 코드 형상 관리"
+            ],
             "year" : "2021 ~",
             "detailId" : "3"
         },
@@ -28,8 +48,11 @@
             "name" : "e편한세상 웹사이트 구축",
             "url" : "https://www.elife.co.kr/Mnmn_main.action",
             "stacks" : ["Pug", "Scss", "JavaScript", "es6", "lottie", "GSAP", "Git", "A11Y", "Web performance"],
-            "desc" : "어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라",
-            "year" : "2020",
+            "descs" : [
+                "퍼블리싱부터 javascript 및 개발 comm까지 전담",
+                "lottie, GSAP를 활용한 모션 제작"
+            ],
+            "year" : "2020.04 - 2020.10",
             "contribution" : "100%",
             "detailId" : "4"
         },
@@ -37,8 +60,11 @@
             "name" : "동아제약 OTC 웹사이트 구축",
             "url" : "https://dpharm.co.kr/",
             "stacks" : ["Pug", "Scss", "JavaScript", "es6", "lottie", "GSAP", "Git", "A11Y", "Web performance"],
-            "desc" : "어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라 어쩌구 저쩌구 블라블라",
-            "year" : "2019",
+            "descs" : [
+                "퍼블리싱부터 javascript 및 개발 comm까지 전담",
+                "lottie, GSAP를 활용한 모션 제작"
+            ],
+            "year" : "2019.10 - 2020.03",
             "contribution" : "100%",
             "detailId" : "5"
         }
