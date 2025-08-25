@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import styled from "styled-components"
 import breakpoints from '../config/breakpoint'
-import Footer from "../components/Footer"
+import Footer from "./Footer"
 
 const menu = [
 	{'home' :'/'},

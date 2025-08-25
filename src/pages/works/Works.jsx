@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 // import useSWR from 'swr'
 import styled from "styled-components"
-import Nav from "../../components/nav"
+import Nav from "../../components/Nav"
 import breakpoints from '../../config/breakpoint'
 import Footer from "../../components/Footer"
 import worksLists from "../../asset/json/worksLists"
