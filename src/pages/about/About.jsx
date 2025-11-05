@@ -1,10 +1,33 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styled from "styled-components"
 import Nav from "../../components/Nav"
-import breakpoints from '../../config/breakpoint'
+import breakpoints from '../../asset/js/breakpoint'
 import Footer from "../../components/Footer"
+import Scrollicon from "../../components/Scrollicon"
 
 function About() {
+	const [showIcon, setShowIcon] = useState(true);
+	const iconShown = JSON.parse(sessionStorage.getItem("pageAboutIconShown"));
+	
+	const listsRef = useRef(null); 
+
+	useEffect(() => {
+		const scrollTarget = listsRef.current;
+		if (!scrollTarget) return;
+
+		const handleScroll = () => {
+			if (scrollTarget.scrollTop > 10) {
+				setShowIcon(false);
+				scrollTarget.removeEventListener("scroll", handleScroll);
+				sessionStorage.setItem("pageAboutIconShown", "true");
+			}
+		};
+
+		scrollTarget.addEventListener("scroll", handleScroll);
+
+		return () => scrollTarget.removeEventListener("scroll", handleScroll);
+	}, []);
+
 	return (
 		<Wrap className='container'>
 			<Nav currentMenu={'about'}/>
@@ -17,27 +40,30 @@ function About() {
 					</h1>
 					<Footer />
 				</div>
-				<div className='lists'>
+				<div className='lists' ref={listsRef}>
+					{ showIcon && !iconShown && <Scrollicon />}
 					<span className='name'>
 						안녕하세요. <br />
 						FE 개발자 김소이 입니다.
 					</span>
 					<ul>
-						<li className='desc'>React 와 Vue.js 를 사용해 재사용 가능한 공통 컴포넌트 개발 및 운영 경험</li>
-						<li className='desc'>Webview 개발 경험</li>
-						<li className='desc'>ESLint, Prettier 사용 경험</li>
-						<li className='desc'>Webpack, Gulp 등 nodeJs 기반 개발 경험</li>
-						<li className='desc'>SEO 개선 경험</li>
-						<li className='desc'>Lighthouse 활용한 웹 성능 최적화 경험</li>
-						<li className='desc'>Git, Jira, Slack, Figma 를 통한 협업 경험</li>
-						<li className='desc'>Html, CSS 등 시멘틱 마크업 관련 이해도를 바탕으로 업무에서 활용 가능</li>
-						<li className='desc'>반응형 프로젝트 경험 다수</li>
-						<li className='desc'>디자이너와의 협업을 통한 모션 인터렉션 경험 다수</li>
+						<li className='desc'>React 및 Vue.js 환경에서 재사용 가능한 UI 컴포넌트 설계 및 관리</li>
+						<li className='desc'>React Hook을 활용한 상태 관리 및 사이드이펙트 처리</li>
+						<li className='desc'>Styled-Components 및 SCSS를 활용한 컴포넌트 스타일링 경험</li>
+						<li className='desc'>Axios 및 Fetch API를 통한 RESTful API 통신 구현 경험</li>
+						<li className='desc'>ESLint, Prettier 등을 통한 코드 품질 관리 및 일관성 유지</li>
+						<li className='desc'>Webpack, Gulp 등 Node.js 기반 빌드 환경 설정</li>
+						<li className='desc'>레거시 코드 기반 프로젝트의 유지보수 및 신규 기능 개발 경험</li>
+						<li className='desc'>Lighthouse를 활용한 웹 성능 진단 및 최적화 경험 (이미지 최적화, 렌더링 개선 등)</li>
+						<li className='desc'>Git, Jira, Slack, Figma 등을 활용한 협업 및 업무 프로세스 경험</li>
+						<li className='desc'>HTML5, CSS3, JavaScript 등 마크업 및 기본 웹 표준에 대한 이해와 실무 적용 능력 보유</li>
+						<li className='desc'>다양한 디바이스 대응을 위한 반응형 웹 프로젝트 다수 참여</li>
+						<li className='desc'>디자이너와의 협업을 통해 인터랙션 및 모션 구현 경험 다수</li>
 					</ul>
 					<ul>
 						<li className='company'>
 							<h2 className='title'>
-								SK커뮤니케이션즈 <span>2021.03 ~</span>
+								SK커뮤니케이션즈 <span>2021.03 ~ 2025.04</span>
 							</h2>
 							<span className='info'>FE개발팀 / FE / 매니저 </span>
 						</li>
@@ -45,7 +71,7 @@ function About() {
 							<h2 className='title'>
 								이트라이브 <span>2019.01 - 2020.10</span>
 							</h2>
-							<span className='info'>UIUX개발팀 / 스크립터 / 사원</span>
+							<span className='info'>UIUX개발팀 / 퍼블리셔 / 사원</span>
 						</li>
 					</ul>
 				</div>
@@ -87,6 +113,7 @@ const Wrap = styled.div`
 		.lists {
 			flex: 1;
 			overflow-y: scroll;
+			position: relative;
 
 			&::-webkit-scrollbar {
 				display: none;

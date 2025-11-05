@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import styled from "styled-components"
-import breakpoints from '../config/breakpoint'
+import breakpoints from '../asset/js/breakpoint'
 import Footer from "./Footer"
 
 const menu = [
@@ -32,7 +32,7 @@ function Nav({currentMenu}) {
 					{filteredMenu.map((item, index) => {
 						const [name, path] = Object.entries(item)[0]
 						return (
-							<Link key={index} to={path} className='navAnimate navHighlight'>
+							<Link key={index} to={path} state={{ from: 'main' }} className='navAnimate navHighlight'>
 								{name.toUpperCase()}
 								<span>0{index + 1}</span>
 							</Link>
@@ -72,7 +72,7 @@ const Wrap = styled.div`
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		z-index: 2;
+		z-index: 3;
 
 		span {
 			display: block;
@@ -102,7 +102,7 @@ const Wrap = styled.div`
 		justify-content: space-between;
 		position: absolute;
 		background: #c0d57e;
-		z-index: 1;
+		z-index: 2;
 		padding: 50px;
 		width: calc(100% - 100px);
 		height: calc(100vh - 100px);

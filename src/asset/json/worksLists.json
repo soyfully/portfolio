@@ -2,71 +2,81 @@
     "name": "works lists",
     "data" : [
         {
+            "imgUrl" : "img/ssul.png",
             "name" : "네이트 썰 커뮤니티 운영",
-            "url" : "https://m.ssul.nate.com/",
             "stacks" : ["React", "Typescript","ESLint", "Prettier", "style-components", "SEO", "A11Y", "Web performance", "Git", "Figma", "JIRA"],
             "descs" : [
-                "React와 Typescript를 사용해 각종 컴포넌트 개발",
-                "React hook을 활용한 상태 관리",
-                "ESLint, Prettier 사용하여 코드 퀄리티 및 일관성 있는 코드 작성",
-                "UI/UX 개선 및 운영 (SEO, 접근성 등)",
-                "Git을 이용한 코드 형상 관리"
+                "React 기반의 UI 컴포넌트 개발 및 리팩토링, 재사용성과 유지보수성 향상",
+                "Custom Hook을 활용해 공통 로직 분리 및 상태 관리 효율화",
+                "ESLint / Prettier를 적용해 코드 품질과 일관성 유지",
+                "UI/UX 접근성 및 SEO 최적화 진행",
+                "Git을 통한 협업 및 버전 관리로 안정적인 배포 환경 유지"
             ],
-            "year" : "2023 ~",
-            "detailId" : "1"
+            "year" : "2023 ~ 2025",
+            "detailId" : "1",
+            "Role" : "FE Development"
         },
         {
             "name" : "네이트 PC 뉴스 운영",
             "url" : "https://news.nate.com/", 
             "stacks" : ["SEO", "A11Y", "Web performance", "Pug", "SCSS", "JavaScript", "Cross Browsing", "Svn", "Figma", "JIRA"],
             "descs" : [
-                "UI/UX 개선 및 운영 (SEO, 접근성, 성능 최적화 등)",
-                "pug, scss 와 같은 전처리기를 이용해 모듈화 하여 재사용성 높힘",
-                "레거시 소스 리팩토링 및 공통화",
-                "크롬 버전 업데이트 대응",
-                "소나 큐브를 활용한 코드 품질 관리 개선",
-                "웹 접근성 준수 및 마크 획득",
-                "크로스 브라우징 대응"
+                "SEO 최적화 및 성능 개선을 통해 검색 노출 및 사용자 경험 개선",
+                "브라우저별 CSS/JS 분기 처리로 크로스 브라우징 호환성 확보",
+                "Chrome 버전 변경 모니터링 및 코드 유지보수로 안정성 확보",
+                "Pug, SCSS 전처리기를 활용한 UI 모듈화 및 재사용성 극대화",
+                "웹 접근성 개선 및 마크 획득 (요구사항 5건  0건 달성)",
+                "SonarQube를 통한 코드 품질 관리 및 버그 감소 (15건  0건)"
             ],
-            "year" : "2021 ~",
-            "detailId" : "2"
+            "year" : "2021 ~ 2025",
+            "detailId" : "2",
+            "Role" : "FE Development"
         },
         {
             "name" : "SKT NUGU 스마트홈 서비스 개발",
             "stacks" : ["WebView", "Vue.js", "Vuex", "ESLint", "Git", "Prettier", "Git", "Figma", "JIRA"],
             "descs" : [
-                "webview 환경 개발 경험",
-                "Vue.js와 Vue Router를 사용하여 사용성과 유지보수 고려해 컴포넌트 개발",
-                "Vuex를 활용한 상태 관리",
-                "ESLint, Prettier 사용하여 코드 퀄리티 및 일관성 있는 코드 작성",
-                "Git을 이용한 코드 형상 관리"
+                "Vue.js + Vue Router를 활용해 재사용성 높은 컴포넌트 개발 및 화면 설계",
+                "Vuex를 통한 상태 관리 및 데이터 흐름 최적화",
+                "ESLint / Prettier 적용으로 코드 품질과 일관성 유지",
+                "Git을 활용한 형상 관리 및 협업 환경 구축"
             ],
-            "year" : "2021 ~",
-            "detailId" : "3"
+            "year" : "2021 ~ 2025",
+            "detailId" : "3",
+            "Role" : "FE Development"
         },
         {
             "name" : "e편한세상 웹사이트 구축",
             "url" : "https://www.elife.co.kr/Mnmn_main.action",
             "stacks" : ["Pug", "Scss", "JavaScript", "es6", "lottie", "GSAP", "Git", "A11Y", "Web performance"],
             "descs" : [
-                "퍼블리싱부터 javascript 및 개발 comm까지 전담",
-                "lottie, GSAP를 활용한 모션 제작"
+                "퍼블리싱 및 JavaScript 개발 전담, UI/UX 구현 및 인터랙션 설계",
+                "Pug, SCSS 등 전처리기를 활용하여 모듈화된 코드 구조로 재사용성과 유지보수성 향상",
+                "초기 로딩 성능 문제 해결을 위해 Lazy Load 적용, 리소스 요청 최소화",
+                "Airbnb Lottie를 활용해 SVG 및 스크롤링 기반 Morphing 애니메이션 구현",
+                "CSS transition / keyframe과 JS 라이브러리를 활용해 원하는 모션 구현",
+                "브라우저 및 디바이스별 CSS/JS 분기 처리로 크로스 브라우징 호환성 확보",
+                "Git을 이용한 형상 관리 및 협업 환경 유지"
             ],
             "year" : "2020.04 - 2020.10",
-            "contribution" : "100%",
-            "detailId" : "4"
+            "detailId" : "4",
+            "Role" : "Publisher"
         },
         {
             "name" : "동아제약 OTC 웹사이트 구축",
             "url" : "https://dpharm.co.kr/",
             "stacks" : ["Pug", "Scss", "JavaScript", "es6", "lottie", "GSAP", "Git", "A11Y", "Web performance"],
             "descs" : [
-                "퍼블리싱부터 javascript 및 개발 comm까지 전담",
-                "lottie, GSAP를 활용한 모션 제작"
+                "재사용 가능한 함수 모듈화를 통해 메인 리스트 Mouse Wheel 스크롤 등 반복 기능 구현",
+                "Lodash.js debounce 활용으로 이벤트 최적화 및 성능 개선",
+                "반응형 구현을 위해 window resize 이벤트 시 모듈화된 코드 재사용 및 CSS Media Query 작성",
+                "메인 모션 구현에 집중하여 인터랙티브 사용자 경험 강화",
+                "Pug, SCSS 전처리기를 활용해 코드 구조화 및 유지보수성 향상",
+                "Git을 활용한 형상 관리 및 협업 환경 유지"
             ],
             "year" : "2019.10 - 2020.03",
-            "contribution" : "100%",
-            "detailId" : "5"
+            "detailId" : "5",
+            "Role" : "Publisher"
         }
     ]
 }

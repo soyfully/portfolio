@@ -1,25 +1,36 @@
-import React from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { useNavigate } from 'react-router-dom'
-// import useSWR from 'swr'
 import styled from "styled-components"
 import Nav from "../../components/Nav"
-import breakpoints from '../../config/breakpoint'
+import breakpoints from '../../asset/js/breakpoint'
 import Footer from "../../components/Footer"
 import worksLists from "../../asset/json/worksLists"
-
-// const fetcher = (url) => {
-// 	return fetch(url, {
-// 		method: 'GET',
-// 		headers: {
-// 			'Content-Type': 'application/json',
-// 			'Accept': 'application/json',
-// 		},
-// 	}).then((res) => res.json());
-// };
+import Scrollicon from "../../components/Scrollicon"
 
 function Works() {
 	const navigate = useNavigate()
-	// const { data, error } = useSWR('/worksLists.json', fetcher)
+
+	const [showIcon, setShowIcon] = useState(true);
+	const iconShown = JSON.parse(sessionStorage.getItem("pageWorksIconShown"));
+
+	const listsRef = useRef(null); 
+
+	useEffect(() => {
+		const scrollTarget = listsRef.current;
+		if (!scrollTarget) return;
+
+		const handleScroll = () => {
+			if (scrollTarget.scrollTop > 10) {
+				setShowIcon(false);
+				scrollTarget.removeEventListener("scroll", handleScroll);
+				sessionStorage.setItem("pageWorksIconShown", "true");
+			}
+		};
+
+		scrollTarget.addEventListener("scroll", handleScroll);
+
+		return () => scrollTarget.removeEventListener("scroll", handleScroll);
+	}, []);
 
 	return (
 		<Wrap className='container'>
@@ -32,7 +43,7 @@ function Works() {
 					</h1>
 					<Footer />
 				</div>
-				<ul className='lists'>
+				<ul className='lists' ref={listsRef}>
 					{worksLists.data.map(({name, stacks, detailId}, index) => {
 						return (
 							<li key={index} className='list' onClick={()=> {navigate(`/detail/${detailId}`)}}>
@@ -49,6 +60,7 @@ function Works() {
 							</li>
 						)
 					})}
+					{ showIcon && !iconShown && <Scrollicon />}
 				</ul>
 			</div>
 		
@@ -85,6 +97,7 @@ const Wrap = styled.div`
 		}
 
 		.lists {
+			position: relative;
 			flex: 0.8;
 			list-style: none;
 			margin: 0;

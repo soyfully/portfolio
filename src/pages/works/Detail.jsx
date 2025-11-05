@@ -1,9 +1,7 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
-// import Nav from "../../components/nav"
+import { useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components'
-import breakpoints from '../../config/breakpoint'
+import breakpoints from '../../asset/js/breakpoint'
 import worksLists from "../../asset/json/worksLists"
 
 function Detail() {
@@ -11,7 +9,7 @@ function Detail() {
     const { detailId } = useParams() 
 
 	const numDetailId = Number(detailId) || 0
-	const {name, url, descs, year, contribution} = worksLists.data[numDetailId - 1] ?? {}
+	const {imgUrl, name, url, descs, year, contribution, Role} = worksLists.data[numDetailId - 1] ?? {}
 
     return (
         <Wrap className='container'>
@@ -38,7 +36,7 @@ function Detail() {
 								Year : { year }
 							</li>
 							<li>
-								Role : FE Development
+								Role : { Role }
 							</li>
 							<li>
 								{contribution && `Contribution: ${contribution}`}
@@ -50,10 +48,9 @@ function Detail() {
 							view
 						</a>
 					}
-					
 				</div>
 				<div className='imgWrap'>
-					<img src='https://placehold.co/1920x1080' className='img' />
+					<img src= { imgUrl ? `${import.meta.env.BASE_URL}${imgUrl.replace(/^\//, '')}` : 'https://placehold.co/1920x1080'} className='img' />
 				</div>
 			</div>
         </Wrap>

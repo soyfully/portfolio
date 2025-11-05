@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from "styled-components"
 import Nav from "../../components/Nav"
 import Footer from "../../components/Footer"
-import breakpoints from '../../config/breakpoint'
+import breakpoints from '../../asset/js/breakpoint'
 
 function Main() {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
